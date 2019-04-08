@@ -11,8 +11,8 @@ Please see the sandbox pages for credentials and reservations. This demo example
 All of the code and examples for this are located in this directory. Clone and access it with the following commands:
 
 ```
-git clone https://github.com/bigevilbeard/challenges_with-network_automation.git
-cd challenges_with-network_automation
+git clone https://github.com/bigevilbeard/automated_bgp_iox.git
+cd automated_bgp_iox
 ```
 
 ## Python Environment Setup
@@ -32,9 +32,9 @@ pip install -r requirements
 ```
 
 ## Reservation Setup
-This lesson leverages a specific [VIRL](https://github.com/bigevilbeard/challenges_with-network_automation/blob/master/topology.virl) topology. Before beginning this lesson run the following command to reconfigure the Sandbox with the proper topology.
+This lesson leverages a specific [VIRL](https://github.com/bigevilbeard/automated_bgp_iox/blob/master/topology.virl) topology. Before beginning this lesson run the following command to reconfigure the Sandbox with the proper topology.
 
-From the `challenges_with-network_automation` directory
+From the `automated_bgp_iox` directory
 ```
 # Get a list of currently running simulations
 virl ls --all
@@ -50,19 +50,19 @@ virl nodes   # Node startup
 ```
 Once the VIRL simulation is built, the following will be seen.
 ```
-(venv) [developer@devbox challenges_with-network_automation]$virl ls
+(venv) [developer@devbox automated_bgp_iox]$virl ls
 Running Simulations
 ╒═══════════════════════════════════════════════════╤══════════╤════════════════════════════╤═══════════╕
 │ Simulation                                        │ Status   │ Launched                   │ Expires   │
 ╞═══════════════════════════════════════════════════╪══════════╪════════════════════════════╪═══════════╡
-│ challenges_with-network_automation_default_yNccAp │ ACTIVE   │ 2019-03-04T16:19:46.778031 │           │
+│ automated_bgp_iox_default_yNccAp                  │ ACTIVE   │ 2019-03-04T16:19:46.778031 │           │
 ╘═══════════════════════════════════════════════════╧══════════╧════════════════════════════╧═══════════╛
 ```
 
 NOTE: IP addresses will differ in your own simulation
 
 ```
-(venv) [developer@devbox challenges_with-network_automation]$virl nodes
+(venv) [developer@devbox automated_bgp_iox]$virl nodes
 Here is a list of all the running nodes
 ╒═══════════╤══════════╤═════════╤═════════════╤════════════╤══════════════════════╤════════════════════╕
 │ Node      │ Type     │ State   │ Reachable   │ Protocol   │ Management Address   │ External Address   │
@@ -92,7 +92,7 @@ In this code, we can show the router BGP and interface information (shown in `js
 Use the `--help` to see the Options and Commands
 
 ```
-(venv) STUACLAR-M-R6EU:challenges_with-network_automation stuaclar$ python router_info.py --help
+(venv) STUACLAR-M-R6EU:automated_bgp_iox stuaclar$ python router_info.py --help
 Usage: router_info.py [OPTIONS] COMMAND [ARGS]...
 
   Gather and Add IOS XE device information using restconf
@@ -119,7 +119,7 @@ Commands:
 - `python router_info.py --file routers.json get_device`
 
 ```
-(venv) STUACLAR-M-R6EU:challenges_with-network_automation stuaclar$ python router_info.py --ip  ios-xe-mgmt.cisco.com  --port 9443  get_device
+(venv) STUACLAR-M-R6EU:automated_bgp_iox stuaclar$ python router_info.py --ip  ios-xe-mgmt.cisco.com  --port 9443  get_device
 Username: root
 Password:
 Working....
