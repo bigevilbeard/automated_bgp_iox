@@ -1,7 +1,6 @@
 import requests
 import urllib3
 import sys
-import argparse
 from tabulate import tabulate
 
 
