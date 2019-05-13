@@ -105,9 +105,10 @@ event manager applet bgp-check
  action 5.0  syslog msg "$_cli_result"
  action 6.0 end
 !
+ip name-server 208.67.222.222
+!
 app-hosting appid guestshell
- app-vnic gateway0 virtualportgroup 0 guest-interface 0
-  guest-ipaddress 10.1.1.2 netmask 255.255.255.0
+vnic gateway1 virtualportgroup 0 guest-interface 0 guest-ipaddress 10.1.1.2 netmask 255.255.255.0 gateway 10.1.1.1 name-server 208.67.222.222
 !
 end
 
