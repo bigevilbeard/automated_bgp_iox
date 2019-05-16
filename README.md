@@ -42,6 +42,10 @@ virl ls --all
 # Stop any running simulations.
 virl down --sim-name <Simulation name>
 
+# Increase the ram for the CSR1000v
+virl flavors delete CSR1000v
+virl flavors add CSR1000v --memory 8192 --vcpus 2
+
 # Start the VIRL Simulation for demo
 virl up
 
