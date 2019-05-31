@@ -30,6 +30,15 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+## Check the version of virlutils (this should be 0.8.8 )
+```
+pip3 freeze | grep virlutils
+virlutils==0.8.8
+```
+If required
+```
+pip3 install --upgrade virlutils
+```
 
 ## Reservation Setup
 This lesson leverages a specific [VIRL](https://github.com/bigevilbeard/automated_bgp_iox/blob/master/topology.virl) topology, as such virl default passwords are used on all routers (cisco/cisco). Before beginning this lesson run the following command to reconfigure the Sandbox with the proper topology.
